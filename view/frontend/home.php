@@ -5,7 +5,7 @@
 
 <?php
   foreach ($fivePosts as $post) {
-    echo $post['title'];
+    echo '<p>' . $post['title'] . '</p>';
   }
 
 
