@@ -8,7 +8,24 @@
     </head>
 
     <body>
-      <header></header>
+      <header>
+        <div id="title">
+          <h1>Jean Forteroche</h1>
+          <h2>Un billet simple pour l'Alaska</h2>
+        </div>
+      </header>
+      <nav class="navbar navbar-inverse">
+       <div class="container-fluid">
+         <ul class="nav navbar-nav">
+           <li class="active"><a href="#">Accueil</a></li>
+           <li><a href="#">Chapitres</a></li>
+           <li><a href="#">Contact</a></li>
+         </ul>
+         <ul class="nav navbar-nav navbar-right">
+           <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Admin</a></li>
+         </ul>
+       </div>
+      </nav>
 
       <?= $content ?>
 

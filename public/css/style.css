@@ -1,7 +1,49 @@
+body
+{
+
+}
 header
 {
-  background: url('../images/Jean-Forteroche.png') no-repeat center;
-  height: 150px;
+  background: url('../images/alaska.jpg') no-repeat center;
+  height: 400px;
+  width: 100%;
+  background-size: cover;
+  text-align: center;
+  position: relative;
+}
+#title
+{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  color: white;
+  background-color: rgba(0,0,0,0.3);
+}
+.navbar
+{
+  border-radius: 0;
+  display: flex;
+}
+.nav li
+{
+  margin-right: 10px;
+  margin-left: 10px;
+}
+#avatar-Forteroche
+{
+  background: url(../images/profil1.jpg) no-repeat top;
+  background-size: cover;
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+  margin: auto;
+  margin-top: 50px;
 }
 footer
 {
