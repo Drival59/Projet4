@@ -6,8 +6,8 @@ require_once('model/PostManager.php');
 function index()
 {
   $postManager = new PostManager();
-  $fivePosts = $postManager->getFivePosts();
-
+  $lastPosts = $postManager->getLastPosts(3);
+  
   require('view/frontend/home.php');
 }
 function listPosts()

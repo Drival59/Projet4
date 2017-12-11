@@ -22,7 +22,7 @@ header
   top: 0;
   right: 0;
   color: white;
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0,0,0,0.2);
 }
 .navbar
 {
@@ -36,7 +36,7 @@ header
 }
 #avatar-Forteroche
 {
-  background: url(../images/profil1.jpg) no-repeat top;
+  background: url('../images/profil1.jpg') no-repeat top;
   background-size: cover;
   border-radius: 50%;
   width: 250px;
@@ -45,7 +45,37 @@ header
   margin: auto;
   margin-top: 50px;
 }
+#presentation
+{
+  margin-top: 50px;
+  text-align: center;
+}
+#quote
+{
+  font-style: italic;
+  font-weight: bold;
+}
+#lastChapters
+{
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+#lastPosts
+{
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+}
+.postHome
+{
+  border: 1px solid #222222;
+  width: 25%;
+  border-radius: 5px;
+}
 footer
 {
   height: 150px;
+  background-color: #222222;
+  margin-top: 100px;
 }
