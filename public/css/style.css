@@ -1,6 +1,6 @@
 body
 {
-
+  font-family: 'PT Serif', serif;
 }
 header
 {
@@ -22,7 +22,9 @@ header
   top: 0;
   right: 0;
   color: white;
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(0,0,0,0.3);
+  font-family: 'Spectral SC', serif;
+  text-shadow: 2px 2px 2px black;
 }
 .navbar
 {
@@ -33,6 +35,7 @@ header
 {
   margin-right: 10px;
   margin-left: 10px;
+  font-size: 1.2em;
 }
 #avatar-Forteroche
 {
@@ -79,14 +82,34 @@ header
 {
   background-color: #222222;
   color: white;
+  margin-top: 10px;
+  width: 200px;
+  height: 40px;
 }
 .btn:hover
 {
-  color: grey;
+  color: #c4c5ca;
 }
 footer
 {
   height: 150px;
   background-color: #222222;
   margin-top: 100px;
+  color: white;
+  font-family: 'Spectral SC', serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.social-media
+{
+  display: flex;
+  justify-content: space-around;
+  width: 150px;
+}
+.social-media a
+{
+  text-decoration: none;
+  color: white;
 }

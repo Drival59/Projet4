@@ -21,7 +21,7 @@
       echo '<img src="public/images/' . $post['img_article'] . '" alt="" width="100%" height="50%">';
       echo "<h3>" . $post['title'] . "</h3>";
       echo '<p>Écrit par ' . $post['author'] . ' le '. $dateFr . '</p>';
-      echo "<p>" . $post['content'] . "</p>";
+      echo "<p>" . substr($post['content'],0,255) . "...</p>";
       echo '<button type="button" class="btn">Lire la suite</button>';
       echo '</div>';
     }
@@ -29,7 +29,6 @@
   ?>
 
 </div>
-
 
 <?php
 
