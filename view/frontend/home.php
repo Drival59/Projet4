@@ -14,21 +14,17 @@
 
   <?php
 
-
     foreach ($lastPosts as $post) {
+      $dateFormat = new DateTime($post['date_article']);
+      $dateFr = $dateFormat->format('d/m/Y à H:i:s');
       echo '<div class="postHome">';
       echo '<img src="public/images/' . $post['img_article'] . '" alt="" width="100%" height="50%">';
-      echo "<p>" . $post['title'] . "</p>";
-      echo "<p>" . $post['author'] . "</p>";
+      echo "<h3>" . $post['title'] . "</h3>";
+      echo '<p>Écrit par ' . $post['author'] . ' le '. $dateFr . '</p>';
       echo "<p>" . $post['content'] . "</p>";
-      echo "<p>" . $post['img_article'] . "</p>";
-      echo "<p>" . $post['date_article'] . "</p>";
+      echo '<button type="button" class="btn">Lire la suite</button>';
       echo '</div>';
-
-
-
     }
-
 
   ?>
 

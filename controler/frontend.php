@@ -7,7 +7,7 @@ function index()
 {
   $postManager = new PostManager();
   $lastPosts = $postManager->getLastPosts(3);
-  
+
   require('view/frontend/home.php');
 }
 function listPosts()

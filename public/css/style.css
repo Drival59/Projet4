@@ -64,14 +64,25 @@ header
 #lastPosts
 {
   margin: auto;
+  width: 1900px;
   display: flex;
   justify-content: space-around;
 }
 .postHome
 {
   border: 1px solid #222222;
-  width: 25%;
+  width: 500px;
   border-radius: 5px;
+  text-align: center;
+}
+.btn
+{
+  background-color: #222222;
+  color: white;
+}
+.btn:hover
+{
+  color: grey;
 }
 footer
 {
