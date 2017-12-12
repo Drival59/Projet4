@@ -13,16 +13,15 @@
 <div id="lastPosts">
 
   <?php
-
-    foreach ($lastPosts as $post) {
-      $dateFormat = new DateTime($post['date_article']);
+    foreach ($lastChapters as $chapter) {
+      $dateFormat = new DateTime($chapter['date_chapter']);
       $dateFr = $dateFormat->format('d/m/Y à H:i:s');
       echo '<div class="postHome">';
-      echo '<img src="public/images/' . $post['img_article'] . '" alt="" width="100%" height="50%">';
-      echo "<h3>" . $post['title'] . "</h3>";
-      echo '<p>Écrit par ' . $post['author'] . ' le '. $dateFr . '</p>';
-      echo "<p>" . substr($post['content'],0,255) . "...</p>";
-      echo '<button type="button" class="btn">Lire la suite</button>';
+      echo '<img src="public/images/' . $chapter['img_chapter'] . '" alt="" width="100%" height="50%">';
+      echo "<h3>" . $chapter['title'] . "</h3>";
+      echo '<p>Écrit par ' . $chapter['author'] . ' le '. $dateFr . '</p>';
+      echo "<p>" . substr($chapter['content'],0,255) . "...</p>";
+      echo '<button id="buttonHome" type="button" class="btn">Lire la suite</button>';
       echo '</div>';
     }
 

@@ -1,19 +1,19 @@
 <?php
 
-require_once('model/PostManager.php');
+require_once('model/ChapterManager.php');
 
 
 function index()
 {
-  $postManager = new PostManager();
-  $lastPosts = $postManager->getLastPosts(3);
+  $chapterManager = new ChapterManager();
+  $lastChapters = $chapterManager->getLastChapters(3);
 
   require('view/frontend/indexView.php');
 }
-function listPosts()
+function listChapters()
 {
-  $postManager = new PostManager();
-  $posts = $postManager->getPosts();
+  $chapterManager = new ChapterManager();
+  $chapters = $chapterManager->getChapters();
 
-  require('view/frontend/listPostsView.php');
+  require('view/frontend/listChaptersView.php');
 }

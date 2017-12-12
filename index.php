@@ -5,7 +5,9 @@ require_once('controler/backend.php');
 
 try {
   if (isset($_GET['action'])) {
-    # code...
+    if ($_GET['action'] == 'chapters') {
+      listChapters();
+    }
   } else {
     index();
   }
