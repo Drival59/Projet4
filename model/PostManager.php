@@ -18,7 +18,7 @@ class PostManager extends Manager
   public function getPosts()
   {
     $db = $this->dbConnect();
-    $req = $db->query('SELECT title, author, content, date_article FROM articles ORDER BY date_article DESC');
+    $req = $db->query('SELECT title, author, content, img_article, date_article FROM articles ORDER BY date_article DESC');
     return $req;
   }
 }

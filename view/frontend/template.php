@@ -7,7 +7,7 @@
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <link href="public/css/style.css" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Spectral+SC" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
     </head>
 
     <body>
@@ -20,8 +20,8 @@
       <nav class="navbar navbar-inverse">
        <div class="container-fluid">
          <ul class="nav navbar-nav">
-           <li class="active"><a href="#">Accueil</a></li>
-           <li><a href="#">Chapitres</a></li>
+           <li><a href="index.php">Accueil</a></li>
+           <li><a href="index.php?action=chapters">Chapitres</a></li>
            <li><a href="#">Contact</a></li>
          </ul>
          <ul class="nav navbar-nav navbar-right">
