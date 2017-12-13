@@ -67,7 +67,7 @@ header
 #lastPosts
 {
   margin: auto;
-  width: 1900px;
+  width: 1800px;
   display: flex;
   justify-content: space-around;
 }
@@ -78,7 +78,7 @@ header
   border-radius: 5px;
   text-align: center;
 }
-#buttonHome
+.buttonNext
 {
   background-color: #222222;
   color: white;
@@ -119,15 +119,21 @@ footer
   margin: auto;
   display: flex;
   justify-content: space-around;
+  margin-top: 50px;
 }
 .chapters
 {
   width: 480px;
   margin: auto;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   padding-bottom: 20px;
   text-align: center;
-  border-bottom: 1px solid #c4c5ca;
+  border: 3px solid #c4c5ca;
+  border-bottom: 5px solid #222222;
+}
+.chaptersHidden
+{
+  display: none;
 }
 #widget
 {
@@ -138,9 +144,10 @@ footer
   display: flex;
   padding: 25px;
   margin: auto;
-  border: 1px solid #c4c5ca;
+  border: 3px solid #c4c5ca;
+  border-bottom: 5px solid #222222;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 #buttonSearch
 {
@@ -148,6 +155,36 @@ footer
 }
 #about
 {
-  border: 1px solid #c4c5ca;
+  border: 3px solid #c4c5ca;
+  border-bottom: 5px solid #222222;
   padding-left: 25px;
+  padding-right: 25px;
+  text-align: justify;
+  padding-bottom: 25px;
+  margin-bottom: 50px;
+}
+#follow
+{
+  border: 3px solid #c4c5ca;
+  border-bottom: 5px solid #222222;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 25px;
+  margin-bottom: 50px;
+}
+#follow a
+{
+  text-decoration: none;
+  color: #222222;
+  margin-right: 50px;
+}
+#btnMoreChapters
+{
+  text-align: center;
+}
+#more_chapters
+{
+  background-color: #222222;
+  color: white;
+  font-size: 1.5em;
 }

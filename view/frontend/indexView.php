@@ -21,7 +21,7 @@
       echo "<h3>" . $chapter['title'] . "</h3>";
       echo '<p>Écrit par ' . $chapter['author'] . ' le '. $dateFr . '</p>';
       echo "<p>" . substr($chapter['content'],0,255) . "...</p>";
-      echo '<button id="buttonHome" type="button" class="btn">Lire la suite</button>';
+      echo '<button type="button" class="btn buttonNext">Lire la suite</button>';
       echo '</div>';
     }
 

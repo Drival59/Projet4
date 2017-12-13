@@ -13,7 +13,8 @@ function index()
 function listChapters()
 {
   $chapterManager = new ChapterManager();
-  $chapters = $chapterManager->getChapters();
-
+  $chapters = $chapterManager->getChapters(0,1);
+  $chaptersToLoad =$chapterManager->getNbChaptersToLoad();
+  $countChapters = $chapterManager->getCountChapters();
   require('view/frontend/listChaptersView.php');
 }
