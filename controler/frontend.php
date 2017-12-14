@@ -18,3 +18,8 @@ function listChapters()
   $countChapters = $chapterManager->getCountChapters();
   require('view/frontend/listChaptersView.php');
 }
+
+function contact()
+{
+  require('view/frontend/contactView.php');
+}

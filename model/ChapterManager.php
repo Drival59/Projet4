@@ -7,7 +7,7 @@ require_once('Manager.php');
  */
 class ChapterManager extends Manager
 {
-  private $nbChaptersToLoad = 1;
+  private $nbChaptersToLoad = 3;
 
   public function getNbChaptersToLoad()
   {
