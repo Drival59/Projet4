@@ -19,7 +19,7 @@
         echo '<h3>' . $chapter['title'] . '</h3>';
         echo '<p>Écrit par ' . $chapter['author'] . ' le '. $dateFr . '</p>';
         echo "<p>" . substr($chapter['content'],0,255) . "...</p>";
-        echo '<button type="button" class="btn buttonNext">Lire la suite</button>';
+        echo '<a href="index.php?action=chapters&id=' . $chapter['id'] . '"><button type="button" class="btn buttonNext">Lire la suite</button></a>';
         echo '</div>';
       }
 

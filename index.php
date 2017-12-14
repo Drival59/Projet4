@@ -7,7 +7,11 @@ try {
 
   if (isset($_GET['action'])) {
     if ($_GET['action'] == 'chapters') {
-      listChapters();
+      if (isset($_GET['id'])) {
+        chapter($_GET['id']);
+      } else {
+        listChapters();
+      }
     } elseif ($_GET['action'] == 'contact') {
       contact();
     }

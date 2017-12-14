@@ -10,6 +10,7 @@ function index()
 
   require('view/frontend/indexView.php');
 }
+
 function listChapters()
 {
   $chapterManager = new ChapterManager();
@@ -17,6 +18,13 @@ function listChapters()
   $chaptersToLoad =$chapterManager->getNbChaptersToLoad();
   $countChapters = $chapterManager->getCountChapters();
   require('view/frontend/listChaptersView.php');
+}
+
+function chapter($id)
+{
+  $chapterManager = new ChapterManager();
+  $chapter = $chapterManager->getChapter($id);
+  require('view/frontend/chapterView.php');
 }
 
 function contact()
