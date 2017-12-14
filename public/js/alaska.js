@@ -5,7 +5,9 @@ var nbChaptersToLoad = 3;
 
 btnMoreChaptersElt.addEventListener("click", function () {
   for (var i = 0; i < nbChaptersToLoad; i++) {
-    chaptersHiddenElts[0].classList.remove("chaptersHidden");
+    if (chaptersHiddenElts[0] !== undefined) {
+      chaptersHiddenElts[0].classList.remove("chaptersHidden");
+    }
   }
 
   if (chaptersHiddenElts.length === 0) {
