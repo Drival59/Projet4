@@ -1,6 +1,7 @@
 <?php
 
 require_once('model/ChapterManager.php');
+require_once('model/CommentManager.php');
 
 
 function index()
@@ -24,6 +25,11 @@ function chapter($id)
 {
   $chapterManager = new ChapterManager();
   $chapter = $chapterManager->getChapter($id);
+  $commentManager = new CommentManager();
+  $comments = $commentManager->getComments($id);
+  if (isset($_POST['name']) AND isset($_POST['message'])) {
+    $commentManager->addComment($id, $_POST['name'], $_POST['message']);
+  }
   require('view/frontend/chapterView.php');
 }
 
