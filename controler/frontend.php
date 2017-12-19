@@ -2,14 +2,22 @@
 
 require_once('model/ChapterManager.php');
 require_once('model/CommentManager.php');
-
+require_once('model/AdminManager.php');
 
 function index()
 {
   $chapterManager = new ChapterManager();
   $lastChapters = $chapterManager->getLastChapters(3);
-
-  require('view/frontend/indexView.php');
+  $adminManager = new AdminManager();
+  $login = $adminManager->getLogin();
+  $passHash = $adminManager->getPassHash();
+  if (isset($_POST['login']) AND $_POST['login'] === $login AND isset($_POST['pwd']) AND password_verify($_POST['pwd'], $passHash)) {
+    $_SESSION['login'] = $_POST['login'];
+    $_SESSION['pwd'] = $_POST['pwd'];
+    header('Location: index.php');
+  } else {
+    require('view/frontend/indexView.php');
+  }
 }
 
 function listChapters()
@@ -27,6 +35,7 @@ function chapter($id)
   $chapter = $chapterManager->getChapter($id);
   $commentManager = new CommentManager();
   $comments = $commentManager->getComments($id);
+  $count = $commentManager->getCountComments($id);
   if (isset($_POST['name']) AND isset($_POST['message'])) {
     $commentManager->addComment($id, $_POST['name'], $_POST['message']);
   }

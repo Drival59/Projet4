@@ -13,7 +13,7 @@
   echo '</div>';
 ?>
 <div id="comment_container">
-  <h2>Commentaires</h2>
+  <h2>Commentaires (<?= $count ?>)</h2>
   <form method="post">
    <div class="form-group">
      <label for="name">Nom :</label>
@@ -27,20 +27,21 @@
   </form>
 
   <?php
+    echo '<br />';
     foreach ($comments as $comment) {
       $dateFormat = new DateTime($comment['date_comment']);
       $dateFr = $dateFormat->format('d/m/Y à H:i:s');
-      echo '<p>' . $comment['name'] . '</p>';
+      echo '<div class="comments">';
+      echo '<p><strong>' . $comment['name'] . '</strong> a écrit : <i style="float:right">Le ' . $dateFr  . '</i></p>';
+      echo '<br />';
       echo '<p>' . $comment['message'] . '</p>';
-      echo '<p>' . $dateFr . '</p>';
-      echo '<br /><br /><br /><br /><br />';
+      echo '</div>';
     }
 
     if (isset($_POST['name']) AND isset($_POST['message'])) {
       header('Location: index.php?action=chapters&id=' . $_GET['id'] . '#comment_container');
     }
    ?>
-  <?php //commentaires ?>
 
 </div>
 

@@ -1,0 +1,5 @@
+<?php $title = "Bienvenue Jean Forteroche"; ?>
+<?php ob_start(); ?>
+
+<?php $content = ob_get_clean(); ?>
+<?php require('templateAdmin.php'); ?>
