@@ -240,3 +240,20 @@ footer
   margin-bottom: 20px;
   padding: 20px;
 }
+#admin_container
+{
+  text-align: center;
+  margin-top: 50px;
+  border: 1px solid red;
+}
+#chapter_admin_container
+{
+  display: flex;
+  justify-content: space-around;
+}
+.chapter_admin
+{
+  border: 1px solid #222222;
+  width: 30%;
+  margin-top: 50px;
+}

@@ -6,7 +6,7 @@ require_once('model/AdminManager.php');
 
 function indexAdmin()
 {
-
+  
   require('view/backend/indexAdminView.php');
 }
 
