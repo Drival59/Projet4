@@ -7,7 +7,13 @@ require_once('controler/backend.php');
 try {
   if (isset($_SESSION['login']) AND isset($_SESSION['pwd'])) {
     if (isset($_GET['action'])) {
-      if ($_GET['action'] == 'logout') {
+      if ($_GET['action'] == 'createChapter') {
+        if (isset($_POST['title']) AND isset($_POST['content']) AND isset($_FILES['img_chapter'])) {
+          addChapter($_POST['title'], $_POST['content'], $_FILES['img_chapter']);
+        } else {
+          createChapter();
+        }
+      } elseif ($_GET['action'] == 'logout') {
         logout();
       }
     } else {

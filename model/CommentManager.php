@@ -28,10 +28,5 @@ class CommentManager extends Manager
     $req->bindParam(':name', $name);
     $req->bindParam(':message', $message);
     $req->execute();
-    /*$req->exec(array(
-      ':id_chapter' => $idChapter,
-      ':name' => $name,
-      ':message' => $message
-    ));*/
   }
 }

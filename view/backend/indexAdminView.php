@@ -12,9 +12,30 @@
     </div>
     <div class="chapter_admin">
       <h4><strong>Editer un chapitre</strong></h4>
+      <form action="index.php">
+        <select name="editChapter">
+          <?php
+            foreach ($chapters as $chapter) {
+              echo '<option value="' . $chapter['id'] . '">' . $chapter['title'] . '</option>';
+            }
+           ?>
+        </select>
+        <input type="submit" name="" value="Éditer">
+      </form>
     </div>
     <div class="chapter_admin">
       <h4><strong>Supprimer un chapitre</strong></h4>
+      <form action="index.php">
+        <select name="deleteChapter">
+          <?php
+            foreach ($chapters2 as $chapter) {
+              echo '<option value="' . $chapter['id'] . '">' . $chapter['title'] . '</option>';
+            }
+           ?>
+        </select>
+        <input type="submit" name="" value="Supprimer">
+      </form>
+
     </div>
   </div>
 </div>

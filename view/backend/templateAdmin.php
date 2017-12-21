@@ -21,8 +21,6 @@
        <div class="container-fluid">
          <ul class="nav navbar-nav">
            <li><a href="index.php">Accueil</a></li>
-           <li><a href="index.php?action=chapters">Chapitres</a></li>
-           <li><a href="index.php?action=contact">Contact</a></li>
          </ul>
          <ul class="nav navbar-nav navbar-right">
            <li><a href="index.php?action=logout"><span class="glyphicon glyphicon-log-in"></span> Deconnexion</a></li>

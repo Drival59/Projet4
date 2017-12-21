@@ -49,4 +49,21 @@ class ChapterManager extends Manager
     $count = $data['nbChapters'];
     return $count;
   }
+
+  public function createChapter($title, $content, $imgChapter)
+  {
+    $directory = 'C:\wamp64\www\Projet4\Projet4\public\images\\' . $imgChapter['name'] . '';
+    $ok = move_uploaded_file($imgChapter['tmp_name'], $directory);
+    if ($ok) {
+      $db = $this->dbConnect();
+      $req = $db->prepare('INSERT INTO chapters(title, content, img_chapter)
+      VALUES (:title, :content, :img_chapter)');
+      $req->bindParam(':title', $title);
+      $req->bindParam(':content', $content);
+      $req->bindParam(':img_chapter', $imgChapter['name']);
+      $req->execute();
+    }
+
+  }
+
 }
