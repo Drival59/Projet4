@@ -244,7 +244,6 @@ footer
 {
   text-align: center;
   margin-top: 50px;
-  border: 1px solid red;
 }
 #chapter_admin_container
 {
@@ -253,12 +252,23 @@ footer
 }
 .chapter_admin
 {
-  border: 1px solid #222222;
+  border: 1px solid #c4c5ca;
   width: 30%;
   margin-top: 50px;
+  padding: 10px;
+  border-radius: 5px;
 }
 #createChapter, #editChapter
 {
   width: 960px;
   margin: auto;
+}
+.comment_admin
+{
+  border: 1px solid #c4c5ca;
+  width: 30%;
+  padding: 10px;
+  border-radius: 5px;
+  margin: auto;
+  margin-top: 50px;
 }

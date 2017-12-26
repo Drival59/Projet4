@@ -9,6 +9,7 @@ function indexAdmin()
   $chapterManager = new ChapterManager();
   $chapters = $chapterManager->getChapters();
   $chapters2 = $chapterManager->getChapters();
+  $chapters3 = $chapterManager->getChapters();
   require('view/backend/indexAdminView.php');
 }
 
@@ -22,7 +23,7 @@ function addChapter($title, $content, $imgChapter)
 {
   $chapterManager = new ChapterManager();
   $chapters = $chapterManager->createChapter($title, $content, $imgChapter);
-  require('view/backend/addChapterView.php');
+  header('Location: index.php');
 }
 
 function createChapter()
@@ -47,5 +48,5 @@ function editChapter($id, $title, $content, $imgChapter)
 {
   $chapterManager = new ChapterManager();
   $chapterManager->editChapter($id, $title, $content, $imgChapter);
-  header('location: index.php');
+  header('Location: index.php');
 }

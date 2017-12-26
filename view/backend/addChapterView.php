@@ -11,7 +11,7 @@
     <br /><br />
     <label for="img">Image du chapitre : </label> <input type="file" class="btn btn-default" name="img_chapter" required />
     <br /><br />
-    <input type="submit" value="Créer le chapitre">
+    <input type="submit" class="btn btn-default" value="Créer le chapitre">
   </form>
 </div>
 
