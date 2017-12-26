@@ -13,6 +13,17 @@ try {
         } else {
           createChapter();
         }
+      } elseif ($_GET['action'] == 'deleteChapter') {
+        if (isset($_POST['deleteChapter'])) {
+          deleteChapter($_POST['deleteChapter']);
+        }
+      } elseif ($_GET['action'] == 'editChapter') {
+        if (isset($_POST['title']) AND isset($_POST['content'])) {
+          editChapter($_SESSION['id'], $_POST['title'], $_POST['content'], $_FILES['img_chapter']);
+        } else {
+          rewriteChapter($_POST['editChapter']);
+        }
+
       } elseif ($_GET['action'] == 'logout') {
         logout();
       }

@@ -16,11 +16,6 @@
 </div>
 
 <?php
-if (isset($_POST['title'])) {
-  echo $_POST['title'];
-  echo $_POST['content'];
-  var_dump($_FILES);
-}
 $content = ob_get_clean();
 require('templateAdmin.php');
 ?>

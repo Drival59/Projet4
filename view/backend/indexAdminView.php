@@ -10,9 +10,10 @@
       <h4><strong>Créer un chapitre</strong></h4>
       <a href="index.php?action=createChapter"><button type="button" name="createChapter" class="btn btn-default">Créer</button></a>
     </div>
+
     <div class="chapter_admin">
       <h4><strong>Editer un chapitre</strong></h4>
-      <form action="index.php">
+      <form action="index.php?action=editChapter" method="post">
         <select name="editChapter">
           <?php
             foreach ($chapters as $chapter) {
@@ -20,12 +21,13 @@
             }
            ?>
         </select>
-        <input type="submit" name="" value="Éditer">
+        <input type="submit" class="btn btn-default" value="Éditer">
       </form>
     </div>
+
     <div class="chapter_admin">
       <h4><strong>Supprimer un chapitre</strong></h4>
-      <form action="index.php">
+      <form action="index.php?action=deleteChapter" method="post">
         <select name="deleteChapter">
           <?php
             foreach ($chapters2 as $chapter) {
@@ -33,7 +35,29 @@
             }
            ?>
         </select>
-        <input type="submit" name="" value="Supprimer">
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Supprimer</button>
+        <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Suppression du chapitre</h4>
+            </div>
+            <div class="modal-body">
+              <div class="alert alert-danger">
+                <strong>Attention !</strong> Vous êtes sur le point de supprimer le chapitre selectionné. Cliquez sur le bouton pour supprimer <strong>DÉFINITIVEMENT</strong> le chapitre. (action irréversible)
+              </div>
+              <input type="submit" class="btn btn-default" value="Supprimer">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
       </form>
 
     </div>

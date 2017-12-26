@@ -29,3 +29,23 @@ function createChapter()
 {
   require('view/backend/addChapterView.php');
 }
+function deleteChapter($id)
+{
+  $chapterManager = new ChapterManager();
+  $chapterManager->deleteChapter($id);
+  header('Location: index.php');
+}
+
+function rewriteChapter($id)
+{
+  $chapterManager = new ChapterManager();
+  $chapter = $chapterManager->getChapter($id);
+  require('view/backend/editChapterView.php');
+}
+
+function editChapter($id, $title, $content, $imgChapter)
+{
+  $chapterManager = new ChapterManager();
+  $chapterManager->editChapter($id, $title, $content, $imgChapter);
+  header('location: index.php');
+}
