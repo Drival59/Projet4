@@ -53,6 +53,7 @@ class ChapterManager extends Manager
   public function createChapter($title, $content, $imgChapter)
   {
     $directory = 'C:\wamp64\www\Projet4\Projet4\public\images\\' . $imgChapter['name'] . '';
+    //$directory = '/home/valentinim/www/projet4/public/images/' . $imgChapter['name'] . '';
     $ok = move_uploaded_file($imgChapter['tmp_name'], $directory);
     if ($ok) {
       $db = $this->dbConnect();

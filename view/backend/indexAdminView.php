@@ -74,7 +74,7 @@
     <h4><strong>Administration des commentaires</strong></h4>
     <br/ >
     <form action="index.php?action=commentAdmin" method="post">
-      <select class="form-control" name="editChapter">
+      <select class="form-control" name="commentAdmin">
         <?php
           foreach ($chapters3 as $chapter) {
             echo '<option value="' . $chapter['id'] . '">' . $chapter['title'] . '</option>';

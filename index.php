@@ -23,9 +23,10 @@ try {
         } else {
           rewriteChapter($_POST['editChapter']);
         }
-
       } elseif ($_GET['action'] == 'logout') {
         logout();
+      } elseif ($_GET['action'] == 'commentAdmin') {
+        commentAdmin($_POST['commentAdmin']);
       }
     } else {
       indexAdmin();

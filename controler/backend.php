@@ -50,3 +50,10 @@ function editChapter($id, $title, $content, $imgChapter)
   $chapterManager->editChapter($id, $title, $content, $imgChapter);
   header('Location: index.php');
 }
+
+function commentAdmin($idChapter)
+{
+  $commentManager = new CommentManager();
+  $comments = $commentManager->getComments($idChapter);
+  require('view/backend/commentAdminView.php');
+}

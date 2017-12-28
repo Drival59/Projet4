@@ -15,7 +15,7 @@
         } else {
           echo '<div class="chapters chaptersHidden">';
         }
-        echo '<img src="public/images/' . $chapter['img_chapter'] . '" alt="" width="100%" height="50%">';
+        echo '<img src="public/images/' . $chapter['img_chapter'] . '" alt="" width="100%" height="300px">';
         echo '<h3>' . $chapter['title'] . '</h3>';
         echo '<p>Écrit par ' . $chapter['author'] . ' le '. $dateFr . '</p>';
         echo "<p>" . substr($chapter['content'],0,255) . "...</p>";

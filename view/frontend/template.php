@@ -8,6 +8,7 @@
         <link href="public/css/style.css" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Spectral+SC" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+        <link rel="icon" type="image/png" href="public/images/favicon.png" />
     </head>
 
     <body>
