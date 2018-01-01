@@ -23,31 +23,47 @@ class ChapterManager extends Manager
   {
     $db = $this->dbConnect();
     $req = $db->query('SELECT * FROM chapters ORDER BY date_chapter DESC LIMIT ' . $nbChapters . '');
-    return $req;
+    if ($req === false) {
+      throw new Exception("Problème dans la requete SQL pour la fonction getLastChapters()");
+    } else {
+      return $req;
+    }
   }
 
   public function getChapters()
   {
     $db = $this->dbConnect();
     $req = $db->query('SELECT * FROM chapters ORDER BY date_chapter DESC');
-    return $req;
+    if ($req === false) {
+      throw new Exception("Problème dans la requete SQL pour la fonction getChapters()");
+    } else {
+      return $req;
+    }
   }
 
   public function getChapter($id)
   {
     $db = $this->dbConnect();
     $req = $db->query('SELECT title, author, content, img_chapter, date_chapter FROM chapters WHERE id = ' . $id . '');
-    $chapter = $req->fetch();
-    return $chapter;
+    if ($req === false) {
+      throw new Exception("Problème dans la requete SQL pour la fonction getChapter()");
+    } else {
+      $chapter = $req->fetch();
+      return $chapter;
+    }
   }
 
   public function getCountChapters()
   {
     $db = $this->dbConnect();
     $req = $db->query('SELECT COUNT(id) as nbChapters FROM chapters');
-    $data = $req->fetch();
-    $count = $data['nbChapters'];
-    return $count;
+    if ($req === false) {
+      throw new Exception("Problème dans la requete SQL pour la fonction getCountChapters()");
+    } else {
+      $data = $req->fetch();
+      $count = $data['nbChapters'];
+      return $count;
+    }
   }
 
   public function createChapter($title, $content, $imgChapter)

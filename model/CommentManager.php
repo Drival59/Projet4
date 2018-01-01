@@ -9,22 +9,35 @@ class CommentManager extends Manager
   {
     $db = $this->dbConnect();
     $req = $db->query('SELECT * FROM comments WHERE id_chapters = ' . $idChapter . ' ORDER BY id DESC');
-    return $req;
+    if ($req === false) {
+      throw new Exception("Problème dans la requete SQL pour la fonction getComments()");
+    } else {
+      return $req;
+    }
   }
   public function getComment($idComment)
   {
     $db = $this->dbConnect();
     $req = $db->query('SELECT * FROM comments WHERE id = ' . $idComment . '');
-    $comment = $req->fetch();
-    return $comment;
+    if ($req === false) {
+      throw new Exception("Problème dans la requete SQL pour la fonction getComment()");
+    } else {
+      $comment = $req->fetch();
+      return $comment;
+    }
+
   }
   public function getCountComments($idChapter)
   {
     $db = $this->dbConnect();
     $req = $db->query('SELECT COUNT(id) as nbComments FROM comments WHERE id_chapters = ' . $idChapter . '');
-    $data = $req->fetch();
-    $count = $data['nbComments'];
-    return $count;
+    if ($req === false) {
+      throw new Exception("Problème dans la requete SQL pour la fonction getCountComments()");
+    } else {
+      $data = $req->fetch();
+      $count = $data['nbComments'];
+      return $count;
+    }
   }
   public function addComment($idChapter, $name, $message)
   {
