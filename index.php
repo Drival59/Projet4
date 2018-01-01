@@ -19,14 +19,26 @@ try {
         }
       } elseif ($_GET['action'] == 'editChapter') {
         if (isset($_POST['title']) AND isset($_POST['content'])) {
-          editChapter($_SESSION['id'], $_POST['title'], $_POST['content'], $_FILES['img_chapter']);
+          editChapter($_SESSION['idChapter'], $_POST['title'], $_POST['content'], $_FILES['img_chapter']);
         } else {
           rewriteChapter($_POST['editChapter']);
         }
       } elseif ($_GET['action'] == 'logout') {
         logout();
       } elseif ($_GET['action'] == 'commentAdmin') {
-        commentAdmin($_POST['commentAdmin']);
+        if (isset($_POST['commentAdmin'])) {
+          commentAdmin($_POST['commentAdmin']);
+        } else {
+          commentAdmin($_SESSION['idChapterforComment']);
+        }
+      } elseif ($_GET['action'] == 'deleteComment') {
+        removeComment($_POST['deleteComment']);
+      } elseif ($_GET['action'] == 'editComment') {
+        if (isset($_POST['message'])) {
+          editComment($_SESSION['idComment'], $_POST['message']);
+        } else {
+          getComment($_POST['editComment']);
+        }
       }
     } else {
       indexAdmin();

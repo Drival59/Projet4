@@ -55,5 +55,24 @@ function commentAdmin($idChapter)
 {
   $commentManager = new CommentManager();
   $comments = $commentManager->getComments($idChapter);
+  $_SESSION['idChapterforComment'] = $idChapter;
   require('view/backend/commentAdminView.php');
+}
+function removeComment($idComment)
+{
+  $commentManager = new CommentManager();
+  $commentManager->deleteComment($idComment);
+  header('Location: index.php?action=commentAdmin');
+}
+function getComment($idComment)
+{
+  $commentManager = new CommentManager();
+  $comment = $commentManager->getComment($idComment);
+  require('view/backend/editCommentView.php');
+}
+function editComment($idComment, $message)
+{
+  $commentManager = new CommentManager();
+  $commentManager->editComment($idComment, $message);
+  header('Location: index.php?action=commentAdmin');
 }

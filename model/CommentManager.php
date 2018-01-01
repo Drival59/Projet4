@@ -11,6 +11,13 @@ class CommentManager extends Manager
     $req = $db->query('SELECT * FROM comments WHERE id_chapters = ' . $idChapter . ' ORDER BY id DESC');
     return $req;
   }
+  public function getComment($idComment)
+  {
+    $db = $this->dbConnect();
+    $req = $db->query('SELECT * FROM comments WHERE id = ' . $idComment . '');
+    $comment = $req->fetch();
+    return $comment;
+  }
   public function getCountComments($idChapter)
   {
     $db = $this->dbConnect();
@@ -26,6 +33,19 @@ class CommentManager extends Manager
     VALUES (:id_chapters, :name, :message)');
     $req->bindParam(':id_chapters', $idChapter);
     $req->bindParam(':name', $name);
+    $req->bindParam(':message', $message);
+    $req->execute();
+  }
+  public function deleteComment($idComment)
+  {
+    $db = $this->dbConnect();
+    $req = $db->prepare('DELETE FROM comments WHERE id = ' . $idComment . '');
+    $req->execute();
+  }
+  public function editComment($idComment, $message)
+  {
+    $db = $this->dbConnect();
+    $req = $db->prepare('UPDATE comments SET message = :message WHERE id = ' . $idComment . '');
     $req->bindParam(':message', $message);
     $req->execute();
   }

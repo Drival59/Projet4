@@ -1,4 +1,4 @@
-<?php $_SESSION['id'] = $_POST['editChapter']; ?>
+<?php $_SESSION['idChapter'] = $_POST['editChapter']; ?>
 <?php $title = 'Éditer un chapitre'; ?>
 <?php ob_start(); ?>
 
