@@ -57,9 +57,29 @@ class CommentManager extends Manager
   }
   public function editComment($idComment, $message)
   {
+    $reports = 0;
     $db = $this->dbConnect();
-    $req = $db->prepare('UPDATE comments SET message = :message WHERE id = ' . $idComment . '');
+    $req = $db->prepare('UPDATE comments SET message = :message, reports = :reports WHERE id = ' . $idComment . '');
     $req->bindParam(':message', $message);
+    $req->bindParam(':reports', $reports);
+    $req->execute();
+  }
+  public function getReport($idComment)
+  {
+    $db = $this->dbConnect();
+    $req = $db->query('SELECT reports FROM comments WHERE id=' . $idComment . '');
+    if ($req === false) {
+      throw new Exception("Problème dans la requete SQL pour la fonction getReports()");
+    } else {
+      $report = $req->fetch();
+      return $report;
+    }
+  }
+  public function addReport($idComment, $report)
+  {
+    $db = $this->dbConnect();
+    $req = $db->prepare('UPDATE comments SET reports = :reports WHERE id=' . $idComment . '');
+    $req->bindParam(':reports', $report);
     $req->execute();
   }
 }

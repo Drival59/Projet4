@@ -9,7 +9,11 @@ $title= "Administration des commentaires"; ?>
     foreach ($comments as $comment) {
       $dateFormat = new DateTime($comment['date_comment']);
       $dateFr = $dateFormat->format('d/m/Y à H:i:s');
-      echo '<div class="comments">';
+      if ($comment['reports'] > 0) {
+        echo '<div style="background-color:#c9302c;" class="comments">';
+      } else {
+        echo '<div class="comments">';
+      }
       echo 'Écrit par <strong>' . $comment['name'] . '</strong> le ' . $dateFr;
       echo '<form action="index.php?action=deleteComment" method="post">
       <button name="deleteComment" value=' . $comment['id'] . ' style="float:right" class="btn btn-default">Supprimer</button>

@@ -38,6 +38,11 @@ function chapter($id)
   $count = $commentManager->getCountComments($id);
   if (isset($_POST['name']) AND isset($_POST['message'])) {
     $commentManager->addComment($id, $_POST['name'], $_POST['message']);
+  } elseif (isset($_POST['report'])) {
+    $report = $commentManager->getReport($_POST['report']);
+    $nbReport = $report[0];
+    $nbReport++;
+    $commentManager->addReport($_POST['report'], $nbReport);
   }
   require('view/frontend/chapterView.php');
 }

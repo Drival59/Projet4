@@ -13,6 +13,10 @@
      <input type="email" name="email" class="form-control" required>
    </div>
    <div class="form-group">
+     <label for="subject">Sujet :</label>
+     <input type="text" name="subject" class="form-control" required>
+   </div>
+   <div class="form-group">
      <label for="message">Votre message :</label>
      <textarea style="resize:none" name="message" class="form-control" rows="10" required></textarea>
    </div>
@@ -27,7 +31,15 @@
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
         <strong>Message envoyé !</strong> Merci. Je vous recontacterai dans les plus brefs délais.
       </div>
-      <?php } ?>
+      <?php
+      $to = 'hanard.valentin@orange.fr';
+      $subject = $_POST['subject'];
+      $message = 'De la part de ' . $_POST['name'] . ' :' . "\r\n" . "\r\n" . $_POST['message'];
+      $headers = 'From: ' . $_POST['email'] . "\r\n" .
+     'Reply-To: ' . $_POST['email'] . "\r\n" .
+     'X-Mailer: PHP/' . phpversion();
+      mail($to, $subject, $message, $headers);
+      } ?>
 
 </div>
 

@@ -34,6 +34,8 @@
       echo '<div class="comments">';
       echo '<p><strong>' . $comment['name'] . '</strong> a écrit : <i style="float:right">Le ' . $dateFr  . '</i></p>';
       echo '<br />';
+      echo '<form action="index.php?action=chapters&id=' . $_GET['id'] . '#comment_container" method="post">';
+      echo '<button name="report" value=' . $comment['id'] . ' style="float:right" class="btn btn-danger">Signaler</button>';
       echo '<p>' . $comment['message'] . '</p>';
       echo '</div>';
     }
