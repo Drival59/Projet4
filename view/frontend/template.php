@@ -47,6 +47,13 @@
                     <label for="pwd">Mot de passe:</label>
                     <input type="password" class="form-control" placeholder="Entrez votre mot de passe" name="pwd">
                   </div>
+                  <?php
+                  if (isset($_POST['login']) AND isset($_POST['pwd'])) {
+                    echo '<div class="alert alert-danger alert-dismissable">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            Identifiant ou mot de passe incorrect.
+                          </div>';
+                  } ?>
                   <button type="submit" class="btn btn-default">Connexion</button>
                 </form>
               </div>
@@ -77,5 +84,12 @@
 			  crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script src="public/js/alaska.js" charset="utf-8"></script>
+        <?php if (isset($_POST['login']) AND isset($_POST['pwd'])) {
+          echo '<script type="text/javascript">
+            $(document).ready(function() {
+              $("#myModal").modal("show");
+            });
+          </script>';
+        }; ?>
     </body>
 </html>

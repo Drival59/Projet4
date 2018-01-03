@@ -1,5 +1,4 @@
 <?php $title = 'Chapitres'; ?>
-
 <?php ob_start(); ?>
 
 <div id="container">
