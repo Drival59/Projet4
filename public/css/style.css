@@ -276,4 +276,5 @@ footer
 {
   width: 960px;
   margin: auto;
+  min-height: 200px;
 }

@@ -6,6 +6,7 @@ $title= "Administration des commentaires"; ?>
 <br />
 <div id="commentAdmin">
   <?php
+    $i = 0;
     foreach ($comments as $comment) {
       $dateFormat = new DateTime($comment['date_comment']);
       $dateFr = $dateFormat->format('d/m/Y à H:i:s');
@@ -24,6 +25,11 @@ $title= "Administration des commentaires"; ?>
       echo "<br /><br />";
       echo $comment['message'];
       echo '</div>';
+      $i++;
+    }
+    if ($i === 0) {
+      echo '<br />';
+      echo '<h3 style="text-align:center">Aucuns commentaires à administrer</h3>';
     }
   ?>
 </div>
