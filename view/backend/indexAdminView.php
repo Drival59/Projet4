@@ -56,7 +56,7 @@
               <div class="alert alert-danger">
                 <strong>Attention !</strong> Vous êtes sur le point de supprimer le chapitre selectionné. Cliquez sur le bouton pour supprimer <strong>DÉFINITIVEMENT</strong> le chapitre. (action irréversible)
               </div>
-              <input type="submit" class="btn btn-lg btn-default" value="Supprimer">
+              <input type="submit" class="btn btn-lg btn-danger" value="Supprimer">
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>

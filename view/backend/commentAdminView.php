@@ -8,6 +8,7 @@ $title= "Administration des commentaires"; ?>
   <?php
     $i = 0;
     foreach ($comments as $comment) {
+      $i++;
       $dateFormat = new DateTime($comment['date_comment']);
       $dateFr = $dateFormat->format('d/m/Y à H:i:s');
       if ($comment['reports'] > 0) {
@@ -16,20 +17,40 @@ $title= "Administration des commentaires"; ?>
         echo '<div class="comments">';
       }
       echo 'Écrit par <strong>' . $comment['name'] . '</strong> le ' . $dateFr;
-      echo '<form action="index.php?action=deleteComment" method="post">
-      <button name="deleteComment" value=' . $comment['id'] . ' style="float:right" class="btn btn-default">Supprimer</button>
-      </form>';
+      echo '<button data-toggle="modal" data-target="#myModal' . $i . '" name="deleteComment" value=' . $comment['id'] . ' style="float:right;margin-top:20px;" class="btn btn-default">Supprimer</button>';
+      echo '<div class="modal fade" id="myModal' . $i .'" role="dialog">
+              <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Supprimer un commentaire</h4>
+                  </div>
+                  <div style="text-align:center;" class="modal-body">
+                    <form action="index.php?action=deleteComment" method="post">
+                      <div class="alert alert-danger">
+                        <strong>Attention !</strong> Vous êtes sur le point de supprimer le commentaire. Cliquez sur le bouton pour supprimer <strong>DÉFINITIVEMENT</strong> le commentaire. (action irréversible)
+                      </div>
+                      <button name="deleteComment" value=' . $comment['id'] . ' style="text-align:center;" class="btn btn-lg btn-danger">Supprimer</button>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                  </div>
+                </div>
+              </div>
+            </div>';
+
       echo '<form action="index.php?action=editComment" method="post">
       <button name="editComment" value=' . $comment['id'] . ' style="float:right; margin-right:10px;" class="btn btn-default">Editer</button>
       </form>';
       echo "<br /><br />";
       echo $comment['message'];
       echo '</div>';
-      $i++;
     }
     if ($i === 0) {
       echo '<br />';
-      echo '<h3 style="text-align:center">Aucuns commentaires à administrer</h3>';
+      echo '<h3 style="text-align:center">Aucuns commentaires à administrer.</h3>';
     }
   ?>
 </div>
