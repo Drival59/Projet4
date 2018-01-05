@@ -12,12 +12,12 @@
     <div class="chapter_admin">
       <h4><strong>Créer un chapitre</strong></h4>
       <br />
-      <a href="index.php?action=createChapter"><button type="button" name="createChapter" class="btn btn-lg btn-default">Créer</button></a>
+      <a href="create-chapter"><button type="button" name="createChapter" class="btn btn-lg btn-default">Créer</button></a>
     </div>
     <div class="chapter_admin">
       <h4><strong>Editer un chapitre</strong></h4>
       <br />
-      <form action="index.php?action=editChapter" method="post">
+      <form action="edit-chapter" method="post">
         <select class="form-control" name="editChapter">
           <?php
             foreach ($chapters as $chapter) {
@@ -33,7 +33,7 @@
     <div class="chapter_admin">
       <h4><strong>Supprimer un chapitre</strong></h4>
       <br />
-      <form action="index.php?action=deleteChapter" method="post">
+      <form action="delete-chapter" method="post">
         <select class="form-control" name="deleteChapter">
           <?php
             foreach ($chapters2 as $chapter) {
@@ -74,7 +74,7 @@
   <div class="comment_admin">
     <h4><strong>Administration des commentaires</strong></h4>
     <br/ >
-    <form action="index.php?action=commentAdmin" method="post">
+    <form action="comment-admin" method="post">
       <select class="form-control" name="commentAdmin">
         <?php
           foreach ($chapters3 as $chapter) {

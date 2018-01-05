@@ -62,7 +62,7 @@ function removeComment($idComment)
 {
   $commentManager = new CommentManager();
   $commentManager->deleteComment($idComment);
-  header('Location: index.php?action=commentAdmin');
+  header('Location: comment-admin');
 }
 function getComment($idComment)
 {
@@ -74,5 +74,5 @@ function editComment($idComment, $message)
 {
   $commentManager = new CommentManager();
   $commentManager->editComment($idComment, $message);
-  header('Location: index.php?action=commentAdmin');
+  header('Location: comment-admin');
 }

@@ -41,7 +41,7 @@ $title= "Administration des commentaires"; ?>
               </div>
             </div>';
 
-      echo '<form action="index.php?action=editComment" method="post">
+      echo '<form action="edit-comment" method="post">
       <button name="editComment" value=' . $comment['id'] . ' style="float:right; margin-right:10px;" class="btn btn-default">Editer</button>
       </form>';
       echo "<br /><br />";

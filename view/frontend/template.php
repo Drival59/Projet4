@@ -22,8 +22,8 @@
        <div class="container-fluid">
          <ul class="nav navbar-nav">
            <li><a href="index.php">Accueil</a></li>
-           <li><a href="index.php?action=chapters">Chapitres</a></li>
-           <li><a href="index.php?action=contact">Contact</a></li>
+           <li><a href="chapters">Chapitres</a></li>
+           <li><a href="contact">Contact</a></li>
          </ul>
          <ul class="nav navbar-nav navbar-right">
            <li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span> Admin</a></li>

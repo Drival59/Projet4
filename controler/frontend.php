@@ -26,6 +26,8 @@ function listChapters()
   $chapters = $chapterManager->getChapters(0,1);
   $chaptersToLoad =$chapterManager->getNbChaptersToLoad();
   $countChapters = $chapterManager->getCountChapters();
+  unset($_SESSION['addComment']);
+  unset($_SESSION['report']);
   require('view/frontend/listChaptersView.php');
 }
 
@@ -49,5 +51,7 @@ function chapter($id)
 
 function contact()
 {
+  unset($_SESSION['addComment']);
+  unset($_SESSION['report']);
   require('view/frontend/contactView.php');
 }
