@@ -1,7 +1,8 @@
 <?php
 session_start();
 ini_set("sendmail_from","hanard.valentin@orange.fr");
-ini_set("SMTP", "smtp.orange.fr");
+ini_set("SMTP", "SSL0.OVH.NET");
+ini_set('smtp_port',143);
 
 require_once('controler/frontend.php');
 require_once('controler/backend.php');
