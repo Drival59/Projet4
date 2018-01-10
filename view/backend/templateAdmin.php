@@ -46,6 +46,6 @@
 			  crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script src="public/js/tinymce/tinymce.min.js"></script>
-        <script>tinymce.init({ selector:'textarea', language:'fr_FR' });</script>
+        <script>tinymce.init({ selector:'.tinymce', language:'fr_FR' });</script>
     </body>
 </html>

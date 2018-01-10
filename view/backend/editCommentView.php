@@ -8,7 +8,7 @@
 
   <form action="index.php?action=editComment" method="post" enctype="multipart/form-data">
     <br /><br />
-    <textarea name="message" rows="10"><?= $comment['message']; ?></textarea>
+    <textarea name="message" style="width:100%; height:100px;" ><?= $comment['message']; ?></textarea>
     <br /><br />
     <br /><br />
     <input type="submit" class="btn btn-default" value="Éditer le commentaire">

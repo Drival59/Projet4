@@ -16,7 +16,7 @@ $title= "Administration des commentaires"; ?>
       } else {
         echo '<div class="comments">';
       }
-      echo 'Écrit par <strong>' . $comment['name'] . '</strong> le ' . $dateFr;
+      echo 'Écrit par <strong>' . htmlspecialchars($comment['name']) . '</strong> le ' . $dateFr;
       echo '<button data-toggle="modal" data-target="#myModal' . $i . '" name="deleteComment" value=' . $comment['id'] . ' style="float:right;margin-top:20px;" class="btn btn-default">Supprimer</button>';
       echo '<div class="modal fade" id="myModal' . $i .'" role="dialog">
               <div class="modal-dialog">
@@ -45,7 +45,7 @@ $title= "Administration des commentaires"; ?>
       <button name="editComment" value=' . $comment['id'] . ' style="float:right; margin-right:10px;" class="btn btn-default">Editer</button>
       </form>';
       echo "<br /><br />";
-      echo $comment['message'];
+      echo htmlspecialchars($comment['message']);
       echo '</div>';
     }
     if ($i === 0) {

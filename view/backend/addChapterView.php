@@ -7,7 +7,7 @@
   <form action="" method="post" enctype="multipart/form-data">
     <input type="text" class="form-control" name="title" placeholder="Titre du chapitre" required />
     <br /><br />
-    <textarea name="content" rows="50"></textarea>
+    <textarea class="tinymce" name="content" rows="50"></textarea>
     <br /><br />
     <label for="img">Image du chapitre : </label> <input type="file" class="btn btn-default" name="img_chapter" required />
     <br /><br />

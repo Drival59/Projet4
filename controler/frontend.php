@@ -39,7 +39,9 @@ function chapter($id)
   $comments = $commentManager->getComments($id);
   $count = $commentManager->getCountComments($id);
   if (isset($_POST['name']) AND isset($_POST['message'])) {
-    $commentManager->addComment($id, $_POST['name'], $_POST['message']);
+    if (substr($_POST['name'],0,1) !== ' ' AND substr($_POST['message'],0,1) !== ' ') {
+      $commentManager->addComment($id, $_POST['name'], $_POST['message']);
+    }
   } elseif (isset($_POST['report'])) {
     $report = $commentManager->getReport($_POST['report']);
     $nbReport = $report[0];
