@@ -62,7 +62,7 @@
       echo '<div class="comments">';
       echo '<p><strong>' . htmlspecialchars($comment['name']) . '</strong> a écrit : <i class="date-comment">Le ' . $dateFr  . '</i></p>';
       echo '<br />';
-      echo '<p>' . $comment['message'] . '</p>';
+      echo '<p>' . htmlspecialchars($comment['message']) . '</p>';
       echo '<form style="text-align:right" action="chapter-' . $_GET['id'] . '#comment_container" method="post">';
       echo '<button name="report" value=' . $comment['id'] . ' class="btn btn-danger">Signaler</button>';
       echo '</form>';
