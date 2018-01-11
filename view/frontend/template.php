@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
         <title><?= $title ?></title>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -76,7 +77,7 @@
           <a href="#footer"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i></a>
           <a href="#footer"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a>
         </div>
-        <p>Coryright by Jean Forteroche. Designed by Valentin Hanard.</p>
+        <p style="text-align:center">Coryright by Jean Forteroche. Designed by Valentin Hanard.</p>
 
       </footer>
 

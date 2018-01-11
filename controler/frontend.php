@@ -39,7 +39,7 @@ function chapter($id)
   $comments = $commentManager->getComments($id);
   $count = $commentManager->getCountComments($id);
   if (isset($_POST['name']) AND isset($_POST['message'])) {
-    if (substr($_POST['name'],0,1) !== ' ' AND substr($_POST['message'],0,1) !== ' ') {
+    if (substr($_POST['name'],0,1) !== ' ' AND substr($_POST['message'],0,1) !== ' ' AND substr(nl2br($_POST['message']),0,6) !== '<br />') {
       $commentManager->addComment($id, $_POST['name'], $_POST['message']);
     }
   } elseif (isset($_POST['report'])) {

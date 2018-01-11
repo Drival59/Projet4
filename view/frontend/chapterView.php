@@ -29,13 +29,13 @@
   <?php
     echo '<br />';
     if (isset($_POST['name']) AND isset($_POST['message'])) {
-      if (substr($_POST['name'],0,1) !== ' ' AND substr($_POST['message'],0,1) !== ' ') {
+      if (substr($_POST['name'],0,1) !== ' ' AND substr($_POST['message'],0,1) !== ' ' AND substr(nl2br($_POST['message']),0,6) !== '<br />') {
         $_SESSION['addComment'] = 1;
         header('Location: chapter-'. $_GET['id'] . '#comment_container');
       } else {
         echo '<div class="alert alert-danger alert-dismissable">
                 <a href="index.php" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                <strong>Attention !</strong> Votre commentaire ou pseudo ne doit pas commencer par un espace.
+                <strong>Attention !</strong> Votre commentaire ou pseudo ne doit pas commencer par un espace ou un retour à la ligne.
               </div>';
       }
     }
@@ -55,15 +55,17 @@
               <strong>Merci !</strong> Le commentaire a été signalé.
             </div>';
     }
+
     foreach ($comments as $comment) {
       $dateFormat = new DateTime($comment['date_comment']);
       $dateFr = $dateFormat->format('d/m/Y à H:i:s');
       echo '<div class="comments">';
-      echo '<p><strong>' . htmlspecialchars($comment['name']) . '</strong> a écrit : <i style="float:right">Le ' . $dateFr  . '</i></p>';
+      echo '<p><strong>' . htmlspecialchars($comment['name']) . '</strong> a écrit : <i class="date-comment">Le ' . $dateFr  . '</i></p>';
       echo '<br />';
-      echo '<form action="chapter-' . $_GET['id'] . '#comment_container" method="post">';
-      echo '<button name="report" value=' . $comment['id'] . ' style="float:right" class="btn btn-danger">Signaler</button>';
-      echo '<p>' . htmlspecialchars($comment['message']) . '</p>';
+      echo '<p>' . $comment['message'] . '</p>';
+      echo '<form style="text-align:right" action="chapter-' . $_GET['id'] . '#comment_container" method="post">';
+      echo '<button name="report" value=' . $comment['id'] . ' class="btn btn-danger">Signaler</button>';
+      echo '</form>';
       echo '</div>';
     }
    ?>
