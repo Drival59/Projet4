@@ -17,7 +17,8 @@ $title= "Administration des commentaires"; ?>
         echo '<div class="comments">';
       }
       echo 'Écrit par <strong>' . htmlspecialchars($comment['name']) . '</strong> le ' . $dateFr;
-      echo '<button data-toggle="modal" data-target="#myModal' . $i . '" name="deleteComment" value=' . $comment['id'] . ' style="float:right;margin-top:20px;" class="btn btn-default">Supprimer</button>';
+      echo '<div class="btn-comments">';
+      echo '<button data-toggle="modal" data-target="#myModal' . $i . '" name="deleteComment" value=' . $comment['id'] . ' class="btn btn-default">Supprimer</button>';
       echo '<div class="modal fade" id="myModal' . $i .'" role="dialog">
               <div class="modal-dialog">
                 <!-- Modal content-->
@@ -42,9 +43,10 @@ $title= "Administration des commentaires"; ?>
             </div>';
 
       echo '<form action="edit-comment" method="post">
-      <button name="editComment" value=' . $comment['id'] . ' style="float:right; margin-right:10px;" class="btn btn-default">Editer</button>
+      <button name="editComment" value=' . $comment['id'] . ' style="margin-right:10px;" class="btn btn-default">Editer</button>
       </form>';
-      echo "<br /><br />";
+      echo '</div>';
+      echo "<br />";
       echo htmlspecialchars($comment['message']);
       echo '</div>';
     }
