@@ -20,14 +20,16 @@
       </header>
       <nav class="navbar navbar-inverse">
        <div class="container-fluid">
+         <ul id="nav-hamburger">
+           <li><i class="fa fa-bars fa-2x" style="color:white" aria-hidden="true"></i></li>
+         </ul>
          <ul class="nav navbar-nav">
            <li><a href="index.php">Accueil</a></li>
            <li><a href="chapters">Chapitres</a></li>
            <li><a href="contact">Contact</a></li>
-         </ul>
-         <ul class="nav navbar-nav navbar-right">
            <li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span> Admin</a></li>
          </ul>
+
          <div class="modal fade" id="myModal" role="dialog">
           <div class="modal-dialog">
 
